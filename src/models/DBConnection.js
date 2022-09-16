@@ -1,3 +1,4 @@
+require('dotenv').config();
 const { MongoClient } = require('mongodb');
 
 const DB_URL = `mongodb://${process.env.DB_HOST || 'mongodb'}:27017/Cookmaster`;
@@ -10,12 +11,12 @@ const OPTIONS = {
 let connection = null;
 
 module.exports = async () => {
-  if (connection) return connection;
   try {
+    if (connection) return connection;
     connection = (await MongoClient.connect(DB_URL, OPTIONS)).db(process.env.DB_NAME);
+    return connection;
   } catch (error) {
     console.error(error.message);
-    process.exit(1);
+    return process.exit(1);
   }
-  return connection;
 };

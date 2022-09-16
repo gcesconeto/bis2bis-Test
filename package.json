@@ -4,7 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./src/api/server.js",
+    "db:populate": "node ./src/dbSetup/populateDb.js",
+    "db:wipe": "node ./src/dbSetup/wipeDb.js",
+    "db:reset": "npm run db:wipe && npm run db:populate"
   },
   "keywords": [],
   "author": "",
