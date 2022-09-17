@@ -1,8 +1,13 @@
 const { find } = require('../../models/universities');
+const { notFound } = require('../../errors/errors');
 
-module.exports = async (country) => {
+const PAGE_SIZE = 20;
+
+module.exports = async (country, { page = 1 }) => {
   let filter = {};
   if (country) filter = { country };
   const result = await find(filter);
-  return result;
+  const pageContent = await result.skip((page - 1) * PAGE_SIZE).limit(PAGE_SIZE).toArray();
+  if (pageContent.length < 1) throw notFound;
+  return pageContent;
 };
