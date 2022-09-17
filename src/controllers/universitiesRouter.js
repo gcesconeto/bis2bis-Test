@@ -1,7 +1,7 @@
 const { Router } = require('express');
 
 const {
-  create,
+  createOne,
   deleteById,
   getAll,
   getById,
@@ -13,7 +13,7 @@ const router = Router({ mergeParams: true });
 router.get('/', getAll);
 router.get('/:id', getById);
 
-router.post('/', create);
+router.post('/', createOne);
 
 router.put('/:id', updateById);
 

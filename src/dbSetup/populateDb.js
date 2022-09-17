@@ -1,6 +1,6 @@
 const axios = require('axios');
 
-const createMany = require('../models/universities/createMany');
+const { insertMany } = require('../models/universities');
 
 const baseURL = 'http://universities.hipolabs.com/search?country=';
 
@@ -32,7 +32,7 @@ const getUniversities = async () => {
 const populateDB = async () => {
   const results = await getUniversities();
   const universities = consolidateUniversities(results);
-  const result = await createMany(universities);
+  const result = await insertMany(universities);
   if (result.acknowledged) {
     console.log(`${result.insertedCount} Universities were inserted, exiting script...`);
     process.exit(0);

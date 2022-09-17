@@ -1,7 +1,7 @@
-const deleteAll = require('../models/universities/deleteAll');
+const deleteMany = require('../models/universities');
 
 const resetCollection = async () => {
-  const result = await deleteAll();
+  const result = await deleteMany({});
   if (result.acknowledged) {
     console.log(`${result.deletedCount} Universities were deleted, exiting script...`);
     process.exit(0);
