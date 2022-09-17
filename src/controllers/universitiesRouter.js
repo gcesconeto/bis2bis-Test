@@ -1,5 +1,9 @@
 const { Router } = require('express');
 
+const bodyValidator = require('../middlewares/bodyValidator');
+
+const schemas = require('../schemas/universities');
+
 const {
   createOne,
   deleteById,
@@ -13,9 +17,9 @@ const router = Router({ mergeParams: true });
 router.get('/', getAll);
 router.get('/:id', getById);
 
-router.post('/', createOne);
+router.post('/', bodyValidator(schemas.createOne), createOne);
 
-router.put('/:id', updateById);
+router.put('/:id', bodyValidator(schemas.updateById), updateById);
 
 router.delete('/:id', deleteById);
 

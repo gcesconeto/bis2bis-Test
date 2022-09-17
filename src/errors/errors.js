@@ -11,7 +11,7 @@ unprocessableEntity.status = UNPROCESSABLE_ENTITY;
 const conflict = new Error('Entity already exists on database.');
 conflict.status = CONFLICT;
 
-const dbError = new Error('Database error');
+const dbError = new Error('Error writing to database');
 dbError.status = INTERNAL_SERVER_ERROR;
 
 module.exports = {

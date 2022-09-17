@@ -1,7 +1,7 @@
 require('dotenv').config();
 const { MongoClient } = require('mongodb');
 
-const DB_URL = `mongodb://${process.env.DB_HOST || 'mongodb'}:27017/Cookmaster`;
+const DB_URL = `mongodb://${process.env.DB_HOST || 'mongodb'}:27017/Cookmaster`
 
 const OPTIONS = {
   useNewUrlParser: true,

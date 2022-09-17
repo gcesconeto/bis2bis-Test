@@ -1,8 +1,13 @@
+const { INTERNAL_SERVER_ERROR } = require('http-status-codes').StatusCodes;
+
 module.exports = (error, _req, res, _next) => {
   console.log(error);
-  let body = { message: error.message };
+
+  res.status(INTERNAL_SERVER_ERROR);
   if (error.status) res.status(error.status);
+
+  let body = { message: error.message };
   if (error.extraInfo) body = { ...body, ...error.extraInfo };
-  res.json(body);
-  return res.status(500).json('Internal Server Error');
+
+  return res.json(body);
 };
