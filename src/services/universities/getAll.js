@@ -2,12 +2,16 @@ const { find } = require('../../models/universities');
 const { notFound } = require('../../errors/errors');
 
 const PAGE_SIZE = 20;
+const FIELDS = { name: 1, country: 1, 'state-province': 1 };
 
 module.exports = async (country, { page = 1 }) => {
   let filter = {};
   if (country) filter = { country };
   const result = await find(filter);
-  const pageContent = await result.skip((page - 1) * PAGE_SIZE).limit(PAGE_SIZE).toArray();
+  const pageContent = await result.skip((page - 1) * PAGE_SIZE)
+    .limit(PAGE_SIZE)
+    .project(FIELDS)
+    .toArray();
   if (pageContent.length < 1) throw notFound;
   return pageContent;
 };
