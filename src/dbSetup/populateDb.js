@@ -37,7 +37,7 @@ const populateDB = async () => {
     console.log(`${result.insertedCount} Universities were inserted, exiting script...`);
     process.exit(0);
   } else {
-    console.error('Error while inserting universities, exiting script...');
+    console.error('Error inserting universities in database, exiting script...');
     process.exit(1);
   }
 };

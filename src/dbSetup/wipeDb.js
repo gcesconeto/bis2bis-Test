@@ -1,4 +1,4 @@
-const deleteMany = require('../models/universities');
+const { deleteMany } = require('../models/universities');
 
 const resetCollection = async () => {
   const result = await deleteMany({});
@@ -6,7 +6,7 @@ const resetCollection = async () => {
     console.log(`${result.deletedCount} Universities were deleted, exiting script...`);
     process.exit(0);
   } else {
-    console.error('Error while deleting universities, exiting script...');
+    console.error('Error deleting universities from database, exiting script...');
     process.exit(1);
   }
 };
