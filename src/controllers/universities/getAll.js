@@ -1,10 +1,12 @@
+const { OK } = require('http-status-codes').StatusCodes;
+
 const { getAll } = require('../../services/universities');
 
 module.exports = async (req, res, next) => {
   try {
     const { country = null } = req.query;
     const result = await getAll(country);
-    return res.status(200).json(result);
+    return res.status(OK).json(result);
   } catch (err) {
     return next(err);
   }
