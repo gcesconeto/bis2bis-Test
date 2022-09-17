@@ -2,10 +2,11 @@
   "name": "teste-bis2bis",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "./src/api/server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node ./src/api/server.js",
+    "start": "node .",
+    "dev": "nodemon .",
     "db:populate": "node ./src/dbSetup/populateDb.js",
     "db:wipe": "node ./src/dbSetup/wipeDb.js",
     "db:reset": "npm run db:wipe && npm run db:populate"
