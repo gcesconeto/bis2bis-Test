@@ -4,7 +4,7 @@ const { notFound } = require('../../errors/errors');
 const PAGE_SIZE = 20;
 const FIELDS = { name: 1, country: 1, 'state-province': 1 };
 
-module.exports = async (country, { page = 1 }) => {
+module.exports = async (country, page = 1) => {
   let filter = {};
   if (country) {
     const capitalized = country.charAt(0).toUpperCase() + country.slice(1);
