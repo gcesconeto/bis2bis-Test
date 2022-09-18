@@ -6,7 +6,10 @@ const FIELDS = { name: 1, country: 1, 'state-province': 1 };
 
 module.exports = async (country, { page = 1 }) => {
   let filter = {};
-  if (country) filter = { country };
+  if (country) {
+    const capitalized = country.charAt(0).toUpperCase() + country.slice(1);
+    filter = { country: capitalized };
+  }
   const result = await find(filter);
   const pageContent = await result.skip((page - 1) * PAGE_SIZE)
     .limit(PAGE_SIZE)
