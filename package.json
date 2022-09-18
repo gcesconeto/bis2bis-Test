@@ -8,8 +8,7 @@
     "start": "node .",
     "dev": "nodemon .",
     "db:populate": "node ./src/dbSetup/populateDb.js",
-    "db:wipe": "node ./src/dbSetup/wipeDb.js",
-    "db:reset": "npm run db:wipe && npm run db:populate"
+    "db:wipe": "node ./src/dbSetup/wipeDb.js"
   },
   "keywords": [],
   "author": "",
