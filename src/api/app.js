@@ -9,7 +9,7 @@ const app = express();
 
 app.use(express.json());
 
-app.get('/', (_req, res) => res.status(200).sendFile(path.join(__dirname, '../../help.html')));
+app.get('/', (_req, res) => res.status(200).sendFile(path.join(__dirname, '../help.html')));
 
 app.get('/coffee', (_req, res) => res.status(418).end());
 
