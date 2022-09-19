@@ -83,7 +83,7 @@ Rode `npm start` na pasta raíz, a API estará disponível na port configurada p
 
 ## Tests
 
-Testes de integração foram desenvolvidos para os "caminhos felizes" e "caminhos infelizes". Para testaro codigo rode `npm test`.
+Testes de integração foram desenvolvidos para os "caminhos felizes" e "caminhos infelizes". Para testar rode `npm test`.
 
 ## Contato
 
