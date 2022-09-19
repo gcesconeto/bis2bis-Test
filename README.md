@@ -14,6 +14,7 @@ These are the main technologies used:
 * Axios for API consumption,
 * mongoDB as database,
 * Joi for input validation.
+* Jest + supertest for integration tests.
 
 
 ## Installation
@@ -80,7 +81,11 @@ Run `npm start` in the root directory, the API will be available on the configur
   * Responds with `204` if deleted successfully,
   * Responds with `404` if the provided id is not in the database,
   * Responds with `422` if the provided id is malformed.
-  
+
+## Tests
+
+Integration tests were created for every endpoint covering the happy & unhappy paths.
+To run them use `npm test`.
 
 ## Contact
 

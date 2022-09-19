@@ -12,6 +12,7 @@ Estas foram as principais tecnologias utilizadas:
 * Axios para o consumo da API externa,
 * mongoDB como banco de dados,
 * Joi para validação de entradas.
+* Jest + supertest para testes de integração.
 
 
 
@@ -79,6 +80,10 @@ Rode `npm start` na pasta raíz, a API estará disponível na port configurada p
   * Responde com `204` if deleted successfully,
   * Responde com `404` se o id informado não se encontra no banco de dados,
   * Responde com `422` se o id informado está mal formatado.
+
+## Tests
+
+Testes de integração foram desenvolvidos para os "caminhos felizes" e "caminhos infelizes". Para testaro codigo rode `npm test`.
 
 ## Contato
 
