@@ -2,7 +2,7 @@
 
 ## Context
 
-This project was developed as a coding challenge for a position at [Bis2Bis](www.bis2bis.com.br).
+This project was developed as a coding test for a position at [Bis2Bis](www.bis2bis.com.br).
 
 The proposal requested an application, consisting of a script and an API using Node.js. The script must be capable of consuming an external API and populating a mongoDB database with the retrieved data. The API must be capable of providing CRUD actions to manipulate the populated database.
 
@@ -22,7 +22,7 @@ These are the main technologies used:
 ### Setup:
 * Clone the repository https://github.com/gcesconeto/bis2bis-Test,
 * Run `npm install` in the root folder of the cloned repository,
-* Rename the provided `.env.example` file to `.env`,
+* Rename the provided `.env.example` file to `.env`.
   * Edit this file with the relevant data to connect and configure your mongoDB database and also the desired PORT where the API will be exposed.
 ## Using the script
 To consume the external API and populate the database run `npm run db:populate` in the root folder.
@@ -67,10 +67,10 @@ Run `npm start` in the root directory, the API will be available on the configur
   * Receives a JSON body in the format exemplified above,
   * Responds with `201` and the inserted item with corresponding id,
   * If data is not according to format, responds with `422`and the relevant error,
-  * If the name, state-province, and country fields of the received data conflicts with items already in the database, responds with `409`, and the conflicting items,
+  * If the name, state-province, and country fields of the received data conflicts with items already in the database, responds with `409`, and the conflicting items.
 * PUT `/universities/:id`:
-  * Receives a JSON body with any combination of the following keys: web_pages, name and domains.
-  * Responds with `200` if updated successfully
+  * Receives a JSON body with any combination of the following keys: web_pages, name and domains,
+  * Responds with `200` if updated successfully,
   * If data is not according to format, responds with `422`and the relevant error,
   * Responds with `404` if the provided id is not in the database,
   * Responds with `422` if the provided id is malformed.
