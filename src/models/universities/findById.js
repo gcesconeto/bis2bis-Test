@@ -1,10 +1,10 @@
 const { ObjectId } = require('mongodb');
-const connection = require('../DBConnection');
+const connection = require('../dbConnection');
 const { unprocessableEntity } = require('../../errors/errors');
 
 module.exports = async (id) => {
   if (!ObjectId.isValid(id)) throw unprocessableEntity;
-  const db = await connection();
-  const result = await db.findOne({ _id: ObjectId(id) });
+  const collection = await connection();
+  const result = await collection.findOne({ _id: ObjectId(id) });
   return result;
 };

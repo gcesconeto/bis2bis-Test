@@ -1,7 +1,7 @@
-const connection = require('../DBConnection');
+const connection = require('../dbConnection');
 
 module.exports = async (filter = {}) => {
-  const db = await connection();
-  const result = await db.deleteMany(filter);
+  const collection = await connection();
+  const result = await collection.deleteMany(filter);
   return result;
 };
