@@ -1,7 +1,7 @@
-const connection = require('../DBConnection');
+const connection = require('../dbConnection');
 
 module.exports = async (filter = {}) => {
-  const db = await connection();
-  const result = await db.find(filter);
+  const collection = await connection();
+  const result = await collection.find(filter);
   return result;
 };

@@ -1,7 +1,7 @@
-const connection = require('../DBConnection');
+const connection = require('../dbConnection');
 
 module.exports = async (item) => {
-  const db = await connection();
-  const result = await db.insertOne(item);
+  const collection = await connection();
+  const result = await collection.insertOne(item);
   return result;
 };

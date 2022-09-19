@@ -13,7 +13,7 @@ module.exports = async (country, page = 1) => {
   const result = await find(filter);
   const pageContent = await result.skip((page - 1) * PAGE_SIZE)
     .limit(PAGE_SIZE)
-    .project(FIELDS)
+    // .project(FIELDS)
     .toArray();
   if (pageContent.length < 1) throw notFound;
   return pageContent;
