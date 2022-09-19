@@ -69,7 +69,7 @@ Run `npm start` in the root directory, the API will be available on the configur
   * If data is not according to format, responds with `422`and the relevant error,
   * If the name, state-province, and country fields of the received data conflicts with items already in the database, responds with `409`, and the conflicting items,
 * PUT `/universities/:id`:
-  * Receives a JSON body with the following keys **only**: web_pages, name and domains.
+  * Receives a JSON body with any combination of the following keys: web_pages, name and domains.
   * Responds with `200` if updated successfully
   * If data is not according to format, responds with `422`and the relevant error,
   * Responds with `404` if the provided id is not in the database,

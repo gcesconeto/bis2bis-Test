@@ -1,7 +1,7 @@
 const express = require('express');
 const path = require('path');
 
-const error = require('../middlewares/error');
+const { error } = require('../middlewares');
 
 const universitiesRouter = require('../controllers/universitiesRouter');
 
